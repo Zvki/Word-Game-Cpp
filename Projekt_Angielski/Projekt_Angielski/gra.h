@@ -28,8 +28,8 @@ public:
 	std::string inputText;
 
 
-	int dobrze = 0;
-	int hp = 3;
+	int dobrze;
+	int hp;
 	int selecti_;
 
 	float timer = 20.0f;
@@ -45,9 +45,11 @@ public:
 
 	void move_up();
 	void move_down();
+	void set_all();
 
 	void menu();
 	void game_on();
+	void you_lost();
 
 	void losuj_defnincje(std::vector<std::string>words, int& index);
 	bool zgaduj(std::vector<std::string>words, std::vector<std::string>definitions, int index);

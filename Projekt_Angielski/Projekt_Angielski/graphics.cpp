@@ -23,19 +23,19 @@ bool graphics::init_font()
 
 void graphics::init_text()
 {
-    if(init_font())
+    if (init_font())
     {
         menu_text[0].setFont(font);
         menu_text[0].setCharacterSize(24);
         menu_text[0].setFillColor(sf::Color::White);
         menu_text[0].setString("PLAY");
-        menu_text[0].setPosition(1280 / 2 - menu_text[0].getGlobalBounds().width / 2, 720/3);
+        menu_text[0].setPosition(1280 / 2 - menu_text[0].getGlobalBounds().width / 2, 720 / 3);
 
         menu_text[1].setFont(font);
         menu_text[1].setCharacterSize(24);
         menu_text[1].setFillColor(sf::Color::White);
         menu_text[1].setString("EXIT");
-    	menu_text[1].setPosition(1280 / 2 - menu_text[0].getGlobalBounds().width / 2, 720 / 3 * 2);
+        menu_text[1].setPosition(1280 / 2 - menu_text[0].getGlobalBounds().width / 2, 720 / 3 * 2);
 
         score_.setFont(font);
         score_.setCharacterSize(24);
@@ -65,6 +65,16 @@ void graphics::init_text()
         inputTextDisplay.setFont(font);
         inputTextDisplay.setCharacterSize(24);
         inputTextDisplay.setFillColor(sf::Color::White);
+
+        end_text[0].setFont(font);
+        end_text[0].setCharacterSize(60);
+        end_text[0].setFillColor(sf::Color::White);
+        end_text[0].setString("YOU LOST");
+        end_text[0].setPosition(1280 / 2 - end_text[0].getGlobalBounds().width / 2, 720 / 3);
+
+        end_text[1].setFont(font);
+        end_text[1].setCharacterSize(24);
+        end_text[1].setFillColor(sf::Color::White);
        
     }
 }
@@ -91,16 +101,26 @@ void graphics::render_menu(sf::RenderTarget& target)
     target.draw(menu_text[1]);
 }
 
+void graphics::render_end(sf::RenderTarget& target)
+{
+    end_text[1].setString("Your score is: " + std::to_string(score));
+    end_text[1].setPosition(1280 / 2 - end_text[1].getGlobalBounds().width / 2, 720 / 3 * 2);
+    target.draw(end_text[0]);
+    target.draw(end_text[1]);
+}
+
 void graphics::text_fit(int width)
 {
-    while(this->definitionText.getGlobalBounds().width > width)
+    if(definitionText.getGlobalBounds().width > width)
     {
-        definitionText.setCharacterSize(definitionText.getCharacterSize() - 1);
+        while (this->definitionText.getGlobalBounds().width > width)
+        {
+            definitionText.setCharacterSize(definitionText.getCharacterSize() - 1);
+        }
 
-    }
-
-    if (definitionText.getGlobalBounds().width < width - 100.f)
+    }else if(definitionText.getGlobalBounds().width < width)
     {
         definitionText.setCharacterSize(24);
     }
+    
 }

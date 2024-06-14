@@ -43,12 +43,17 @@ void gra::move_down()
     }
 }
 
+void gra::set_all()
+{
+    graphics_->score = 0;
+    hp = 3;
+    dobrze = 0;
+}
+
 
 
 void gra::menu()
 {
-	while (window.isOpen())
-	{
 		while(window.pollEvent(event))
 		{
 			if(event.type == sf::Event::KeyReleased && event.key.code == sf::Keyboard::W)
@@ -65,10 +70,16 @@ void gra::menu()
 	            {
 	            case 0:
 		            {
-                    game_on();
+                    set_all();
+			            while (window.isOpen())
+			            {
+                            game_on();
+			            }
+                        break;
 		            }
 	            case 1:
 		            {
+                    this->window.close();
                     break;
 		            }
 	            }
@@ -78,13 +89,10 @@ void gra::menu()
         window.clear(sf::Color::Magenta);
         graphics_->render_menu(this->window);
         window.display();
-	}
 }
 
 void gra::game_on()
 {
-    while (window.isOpen() && hp > 0)
-    {
         this->graphics_->text_fit(this->WINDOW_WIDTH);
 
         if (timer <= 0.0f || inputText == currentWord)
@@ -103,10 +111,13 @@ void gra::game_on()
                 hp--;
                 if (hp <= 0)
                 {
-                    this->menu();// Exit loop if HP is 0
+	                while (this->window.isOpen())
+	                {
+                        this->you_lost();// Exit loop if HP is 0
+	                }
                 }
                 // Reset timer if time ran out
-                timer = 20.0f;
+                timer -= dobrze * 0.5f;
             }
 
             // Select a new word and definition
@@ -150,7 +161,26 @@ void gra::game_on()
 
         sf::sleep(sf::milliseconds(10));
         timer -= 0.01f;
+}
+
+void gra::you_lost()
+{
+    while (window.pollEvent(event))
+    {
+        if(event.type == sf::Event::KeyPressed && event.key.code == sf::Keyboard::Enter)
+        {
+            while (window.isOpen())
+            {
+                menu();
+            }
+            break;
+        }
     }
+
+    window.clear(sf::Color::Black);
+    this->graphics_->render_end(this->window);
+    window.display();
+
 }
 
 void gra::losuj_defnincje(std::vector<std::string> words, int& index)

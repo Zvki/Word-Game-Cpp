@@ -17,6 +17,7 @@ public:
 	sf::Text inputTextDisplay;
 
 	sf::Text menu_text[2];
+	sf::Text end_text[2];
 
 	graphics();
 
@@ -25,5 +26,6 @@ public:
 	void init_text();
 	void render_game(sf::RenderTarget& target);
 	void render_menu(sf::RenderTarget& target);
+	void render_end(sf::RenderTarget& target);
 	void text_fit(int width);
 };
