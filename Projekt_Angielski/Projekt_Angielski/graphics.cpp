@@ -12,7 +12,7 @@ graphics::graphics()
 
 bool graphics::init_font()
 {
-    if (!font.loadFromFile("arial.ttf"))
+    if (!font.loadFromFile("Dinofiles.ttf"))
     {
         std::cerr << "Failed to load font!" << std::endl;
         return false;
@@ -25,6 +25,18 @@ void graphics::init_text()
 {
     if(init_font())
     {
+        menu_text[0].setFont(font);
+        menu_text[0].setCharacterSize(24);
+        menu_text[0].setFillColor(sf::Color::White);
+        menu_text[0].setString("PLAY");
+        menu_text[0].setPosition(1280 / 2 - menu_text[0].getGlobalBounds().width / 2, 720/3);
+
+        menu_text[1].setFont(font);
+        menu_text[1].setCharacterSize(24);
+        menu_text[1].setFillColor(sf::Color::White);
+        menu_text[1].setString("EXIT");
+    	menu_text[1].setPosition(1280 / 2 - menu_text[0].getGlobalBounds().width / 2, 720 / 3 * 2);
+
         score_.setFont(font);
         score_.setCharacterSize(24);
         score_.setFillColor(sf::Color::White);
@@ -71,4 +83,24 @@ void graphics::render_game(sf::RenderTarget& target)
     target.draw(this->timerText);
     target.draw(this->inputTextDisplay);
 
+}
+
+void graphics::render_menu(sf::RenderTarget& target)
+{
+    target.draw(menu_text[0]);
+    target.draw(menu_text[1]);
+}
+
+void graphics::text_fit(int width)
+{
+    while(this->definitionText.getGlobalBounds().width > width)
+    {
+        definitionText.setCharacterSize(definitionText.getCharacterSize() - 1);
+
+    }
+
+    if (definitionText.getGlobalBounds().width < width - 100.f)
+    {
+        definitionText.setCharacterSize(24);
+    }
 }

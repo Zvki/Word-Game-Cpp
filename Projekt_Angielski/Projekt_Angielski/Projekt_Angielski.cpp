@@ -17,7 +17,7 @@ int main() {
 
     gra gra_;
 
-    gra_.game_on();
+    gra_.menu();
 	
     std::cout << "Game Over! Your score is: " << gra_.graphics_->score << std::endl;
 

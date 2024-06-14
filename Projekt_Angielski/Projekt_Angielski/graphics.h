@@ -16,10 +16,14 @@ public:
 	sf::Text timerText;
 	sf::Text inputTextDisplay;
 
+	sf::Text menu_text[2];
+
 	graphics();
 
 	bool init_font();
 
 	void init_text();
 	void render_game(sf::RenderTarget& target);
+	void render_menu(sf::RenderTarget& target);
+	void text_fit(int width);
 };

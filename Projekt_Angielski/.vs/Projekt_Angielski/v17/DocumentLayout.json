@@ -1,10 +1,26 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "C:\\Users\\Miko\u0142aj\\source\\repos\\Projekt_Angielski\\",
+  "WorkspaceRootPath": "C:\\Users\\barto\\OneDrive\\Pulpit\\Uni\\PK4\\GITHUB\\PROJEKT_ANG\\Projekt_Angielski\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{3D99F189-CF9B-45D9-A373-DB4B564477BD}|Projekt_Angielski\\Projekt_Angielski.vcxproj|C:\\Users\\Miko\u0142aj\\source\\repos\\Projekt_Angielski\\Projekt_Angielski\\Projekt_Angielski.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "AbsoluteMoniker": "D:0:0:{3D99F189-CF9B-45D9-A373-DB4B564477BD}|Projekt_Angielski\\Projekt_Angielski.vcxproj|C:\\Users\\barto\\OneDrive\\Pulpit\\Uni\\PK4\\GITHUB\\PROJEKT_ANG\\Projekt_Angielski\\Projekt_Angielski\\gra.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{3D99F189-CF9B-45D9-A373-DB4B564477BD}|Projekt_Angielski\\Projekt_Angielski.vcxproj|solutionrelative:Projekt_Angielski\\gra.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3D99F189-CF9B-45D9-A373-DB4B564477BD}|Projekt_Angielski\\Projekt_Angielski.vcxproj|C:\\Users\\barto\\OneDrive\\Pulpit\\Uni\\PK4\\GITHUB\\PROJEKT_ANG\\Projekt_Angielski\\Projekt_Angielski\\gra.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{3D99F189-CF9B-45D9-A373-DB4B564477BD}|Projekt_Angielski\\Projekt_Angielski.vcxproj|solutionrelative:Projekt_Angielski\\gra.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3D99F189-CF9B-45D9-A373-DB4B564477BD}|Projekt_Angielski\\Projekt_Angielski.vcxproj|C:\\Users\\barto\\OneDrive\\Pulpit\\Uni\\PK4\\GITHUB\\PROJEKT_ANG\\Projekt_Angielski\\Projekt_Angielski\\Projekt_Angielski.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
       "RelativeMoniker": "D:0:0:{3D99F189-CF9B-45D9-A373-DB4B564477BD}|Projekt_Angielski\\Projekt_Angielski.vcxproj|solutionrelative:Projekt_Angielski\\Projekt_Angielski.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3D99F189-CF9B-45D9-A373-DB4B564477BD}|Projekt_Angielski\\Projekt_Angielski.vcxproj|C:\\Users\\barto\\OneDrive\\Pulpit\\Uni\\PK4\\GITHUB\\PROJEKT_ANG\\Projekt_Angielski\\Projekt_Angielski\\graphics.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{3D99F189-CF9B-45D9-A373-DB4B564477BD}|Projekt_Angielski\\Projekt_Angielski.vcxproj|solutionrelative:Projekt_Angielski\\graphics.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3D99F189-CF9B-45D9-A373-DB4B564477BD}|Projekt_Angielski\\Projekt_Angielski.vcxproj|C:\\Users\\barto\\OneDrive\\Pulpit\\Uni\\PK4\\GITHUB\\PROJEKT_ANG\\Projekt_Angielski\\Projekt_Angielski\\graphics.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{3D99F189-CF9B-45D9-A373-DB4B564477BD}|Projekt_Angielski\\Projekt_Angielski.vcxproj|solutionrelative:Projekt_Angielski\\graphics.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     }
   ],
   "DocumentGroupContainers": [
@@ -14,19 +30,71 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 0,
+          "SelectedChildIndex": 1,
           "Children": [
             {
               "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "graphics.h",
+              "DocumentMoniker": "C:\\Users\\barto\\OneDrive\\Pulpit\\Uni\\PK4\\GITHUB\\PROJEKT_ANG\\Projekt_Angielski\\Projekt_Angielski\\graphics.h",
+              "RelativeDocumentMoniker": "Projekt_Angielski\\graphics.h",
+              "ToolTip": "C:\\Users\\barto\\OneDrive\\Pulpit\\Uni\\PK4\\GITHUB\\PROJEKT_ANG\\Projekt_Angielski\\Projekt_Angielski\\graphics.h",
+              "RelativeToolTip": "Projekt_Angielski\\graphics.h",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABsAAAAaAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2024-06-13T12:03:25.057Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
               "DocumentIndex": 0,
+              "Title": "gra.cpp",
+              "DocumentMoniker": "C:\\Users\\barto\\OneDrive\\Pulpit\\Uni\\PK4\\GITHUB\\PROJEKT_ANG\\Projekt_Angielski\\Projekt_Angielski\\gra.cpp",
+              "RelativeDocumentMoniker": "Projekt_Angielski\\gra.cpp",
+              "ToolTip": "C:\\Users\\barto\\OneDrive\\Pulpit\\Uni\\PK4\\GITHUB\\PROJEKT_ANG\\Projekt_Angielski\\Projekt_Angielski\\gra.cpp",
+              "RelativeToolTip": "Projekt_Angielski\\gra.cpp",
+              "ViewState": "AQIAACUAAAAAAAAAAAAAADAAAAABAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2024-06-13T12:03:10.126Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "graphics.cpp",
+              "DocumentMoniker": "C:\\Users\\barto\\OneDrive\\Pulpit\\Uni\\PK4\\GITHUB\\PROJEKT_ANG\\Projekt_Angielski\\Projekt_Angielski\\graphics.cpp",
+              "RelativeDocumentMoniker": "Projekt_Angielski\\graphics.cpp",
+              "ToolTip": "C:\\Users\\barto\\OneDrive\\Pulpit\\Uni\\PK4\\GITHUB\\PROJEKT_ANG\\Projekt_Angielski\\Projekt_Angielski\\graphics.cpp",
+              "RelativeToolTip": "Projekt_Angielski\\graphics.cpp",
+              "ViewState": "AQIAAEgAAAAAAAAAAAAAAGQAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2024-06-13T12:03:03.937Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
               "Title": "Projekt_Angielski.cpp",
-              "DocumentMoniker": "C:\\Users\\Miko\u0142aj\\source\\repos\\Projekt_Angielski\\Projekt_Angielski\\Projekt_Angielski.cpp",
+              "DocumentMoniker": "C:\\Users\\barto\\OneDrive\\Pulpit\\Uni\\PK4\\GITHUB\\PROJEKT_ANG\\Projekt_Angielski\\Projekt_Angielski\\Projekt_Angielski.cpp",
               "RelativeDocumentMoniker": "Projekt_Angielski\\Projekt_Angielski.cpp",
-              "ToolTip": "C:\\Users\\Miko\u0142aj\\source\\repos\\Projekt_Angielski\\Projekt_Angielski\\Projekt_Angielski.cpp",
+              "ToolTip": "C:\\Users\\barto\\OneDrive\\Pulpit\\Uni\\PK4\\GITHUB\\PROJEKT_ANG\\Projekt_Angielski\\Projekt_Angielski\\Projekt_Angielski.cpp",
               "RelativeToolTip": "Projekt_Angielski\\Projekt_Angielski.cpp",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABMAAAAPAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
               "WhenOpened": "2024-06-09T16:41:28.288Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "gra.h",
+              "DocumentMoniker": "C:\\Users\\barto\\OneDrive\\Pulpit\\Uni\\PK4\\GITHUB\\PROJEKT_ANG\\Projekt_Angielski\\Projekt_Angielski\\gra.h",
+              "RelativeDocumentMoniker": "Projekt_Angielski\\gra.h",
+              "ToolTip": "C:\\Users\\barto\\OneDrive\\Pulpit\\Uni\\PK4\\GITHUB\\PROJEKT_ANG\\Projekt_Angielski\\Projekt_Angielski\\gra.h",
+              "RelativeToolTip": "Projekt_Angielski\\gra.h",
+              "ViewState": "AQIAABQAAAAAAAAAAAAAAC4AAAAJAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2024-06-13T12:03:23.053Z",
               "EditorCaption": ""
             }
           ]

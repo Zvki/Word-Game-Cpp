@@ -27,9 +27,13 @@ public:
 	std::string currentDefinition;
 	std::string inputText;
 
-	int hp = 3;
-	float timer = 20.0f;
+
 	int dobrze = 0;
+	int hp = 3;
+	int selecti_;
+
+	float timer = 20.0f;
+
 
 	std::vector<std::string>words;
 	std::vector<std::string>definitions;
@@ -39,6 +43,10 @@ public:
 
 	gra();
 
+	void move_up();
+	void move_down();
+
+	void menu();
 	void game_on();
 
 	void losuj_defnincje(std::vector<std::string>words, int& index);

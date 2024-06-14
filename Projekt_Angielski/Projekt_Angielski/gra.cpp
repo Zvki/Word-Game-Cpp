@@ -23,10 +23,70 @@ gra::gra() {
     }
 }
 
+void gra::move_up()
+{
+    if(this->selecti_ - 1 >= 0)
+    {
+        graphics_->menu_text[this->selecti_].setFillColor(sf::Color::White);
+        selecti_--;
+        graphics_->menu_text[this->selecti_].setFillColor(sf::Color::Cyan);
+    }
+}
+
+void gra::move_down()
+{
+    if (this->selecti_ + 1 < 2)
+    {
+        graphics_->menu_text[this->selecti_].setFillColor(sf::Color::White);
+        selecti_++;
+        graphics_->menu_text[this->selecti_].setFillColor(sf::Color::Cyan);
+    }
+}
+
+
+
+void gra::menu()
+{
+	while (window.isOpen())
+	{
+		while(window.pollEvent(event))
+		{
+			if(event.type == sf::Event::KeyReleased && event.key.code == sf::Keyboard::W)
+			{
+                move_up();
+			}
+            if (event.type == sf::Event::KeyReleased && event.key.code == sf::Keyboard::S)
+            {
+                move_down();
+            }
+            if ((event.type == sf::Event::KeyPressed && event.key.code == sf::Keyboard::Enter))
+            {
+	            switch (selecti_)
+	            {
+	            case 0:
+		            {
+                    game_on();
+		            }
+	            case 1:
+		            {
+                    break;
+		            }
+	            }
+            }
+		}
+
+        window.clear(sf::Color::Magenta);
+        graphics_->render_menu(this->window);
+        window.display();
+	}
+}
+
 void gra::game_on()
 {
     while (window.isOpen() && hp > 0)
     {
+        this->graphics_->text_fit(this->WINDOW_WIDTH);
+
         if (timer <= 0.0f || inputText == currentWord)
         {
             if (inputText == currentWord)
@@ -43,7 +103,7 @@ void gra::game_on()
                 hp--;
                 if (hp <= 0)
                 {
-                    break;// Exit loop if HP is 0
+                    this->menu();// Exit loop if HP is 0
                 }
                 // Reset timer if time ran out
                 timer = 20.0f;
@@ -84,7 +144,7 @@ void gra::game_on()
             }
         }
 
-        this->window.clear(sf::Color::Black);
+        this->window.clear(sf::Color::Magenta);
         this->graphics_->render_game(this->window);
         this->window.display();
 
