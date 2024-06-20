@@ -11,7 +11,7 @@ gra::gra() {
 	this->graphics_ = new graphics;
     this->window.create(sf::VideoMode(WINDOW_WIDTH, WINDOW_HEIGHT), "Word Game");
     this->window.setFramerateLimit(60);
-
+    this->hp = 3;
     this->entries = this->parseJsonFile("database.txt");
 
     std::srand(static_cast<unsigned int>(std::time(nullptr)));
@@ -46,7 +46,7 @@ void gra::move_down()
 void gra::set_all()
 {
     graphics_->score = 0;
-    hp = 3;
+    hp = 4;
     dobrze = 0;
 }
 
@@ -70,7 +70,10 @@ void gra::menu()
 	            {
 	            case 0:
 		            {
-                    set_all();
+                        if(hp == 0)
+                        {
+                            set_all();
+                        }
 			            while (window.isOpen())
 			            {
                             game_on();
@@ -86,14 +89,15 @@ void gra::menu()
             }
 		}
 
-        window.clear(sf::Color::Magenta);
+        window.clear(sf::Color::Black);
         graphics_->render_menu(this->window);
         window.display();
 }
 
 void gra::game_on()
 {
-        this->graphics_->text_fit(this->WINDOW_WIDTH);
+
+    this->graphics_->text_fit(this->WINDOW_WIDTH);
 
         if (timer <= 0.0f || inputText == currentWord)
         {
@@ -117,7 +121,7 @@ void gra::game_on()
 	                }
                 }
                 // Reset timer if time ran out
-                timer -= dobrze * 0.5f;
+                timer = 20.f - dobrze * 0.5f;
             }
 
             // Select a new word and definition
@@ -134,6 +138,7 @@ void gra::game_on()
 
         while (window.pollEvent(event))
         {
+
             if (event.type == sf::Event::Closed)
             {
                 window.close();
@@ -155,11 +160,10 @@ void gra::game_on()
             }
         }
 
-        this->window.clear(sf::Color::Magenta);
+        this->window.clear(sf::Color::Black);
         this->graphics_->render_game(this->window);
         this->window.display();
 
-        sf::sleep(sf::milliseconds(10));
         timer -= 0.01f;
 }
 
