@@ -31,6 +31,7 @@ public:
 	int dobrze;
 	int hp;
 	int selecti_;
+	int selected_item = 0;
 
 	float timer = 20.0f;
 
@@ -45,9 +46,12 @@ public:
 
 	void move_up();
 	void move_down();
+	void move_right();
+	void move_left();
 	void set_all();
 
 	void menu();
+	void vocab();
 	void game_on();
 	void you_lost();
 

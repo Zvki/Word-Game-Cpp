@@ -35,7 +35,7 @@ void gra::move_up()
 
 void gra::move_down()
 {
-    if (this->selecti_ + 1 < 2)
+    if (this->selecti_ + 1 < 3)
     {
         graphics_->menu_text[this->selecti_].setFillColor(sf::Color::White);
         selecti_++;
@@ -48,6 +48,18 @@ void gra::set_all()
     graphics_->score = 0;
     hp = 4;
     dobrze = 0;
+}
+
+void gra::move_right()
+{
+    if (this->selected_item + 1 < entries.size())
+        selected_item++;
+}
+
+void gra::move_left()
+{
+    if (this->selected_item - 1 >= 0)
+        selected_item--;
 }
 
 
@@ -71,9 +83,7 @@ void gra::menu()
 	            case 0:
 		            {
                         if(hp == 0)
-                        {
                             set_all();
-                        }
 			            while (window.isOpen())
 			            {
                             game_on();
@@ -81,6 +91,14 @@ void gra::menu()
                         break;
 		            }
 	            case 1:
+		            {
+                    while(window.isOpen())
+                    {
+                        vocab();
+                    }
+                    break;
+		            }
+	            case 2:
 		            {
                     this->window.close();
                     break;
@@ -128,7 +146,7 @@ void gra::game_on()
             int index = std::rand() % words.size();
             currentWord = words[index];
             currentDefinition = definitions[index];
-            this->graphics_->definitionText.setString(currentDefinition + currentWord);
+            this->graphics_->definitionText.setString(currentDefinition + " " + currentWord);
         }
 
         this->graphics_->hpText.setString("HP: " + std::to_string(hp));
@@ -169,6 +187,9 @@ void gra::game_on()
 
 void gra::you_lost()
 {
+
+    this->graphics_->text_fit_vocab(this->WINDOW_WIDTH);
+
     while (window.pollEvent(event))
     {
         if(event.type == sf::Event::KeyPressed && event.key.code == sf::Keyboard::Enter)
@@ -190,6 +211,34 @@ void gra::you_lost()
 void gra::losuj_defnincje(std::vector<std::string> words, int& index)
 {
 	index = rand() % words.size();
+}
+
+void gra::vocab()
+{
+    this->graphics_->text_fit_vocab(this->WINDOW_WIDTH);
+
+    while (window.pollEvent(event))
+    {
+        if (event.type == sf::Event::KeyReleased && event.key.code == sf::Keyboard::A)
+        {
+            move_left();
+        }
+        if (event.type == sf::Event::KeyReleased && event.key.code == sf::Keyboard::D)
+        {
+            move_right();
+        }
+        if (event.type == sf::Event::KeyReleased && event.key.code == sf::Keyboard::Escape)
+        {
+            while(this->window.isOpen())
+            {
+                menu();
+            }
+        }
+    }
+
+    window.clear();
+    this->graphics_->render_vocab(this->window, entries[selected_item].definition , entries[selected_item].word);
+    window.display();
 }
 
 bool gra::zgaduj(std::vector<std::string> words, std::vector<std::string> definitions, int index)

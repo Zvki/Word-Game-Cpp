@@ -29,13 +29,19 @@ void graphics::init_text()
         menu_text[0].setCharacterSize(60);
         menu_text[0].setFillColor(sf::Color::White);
         menu_text[0].setString("PLAY");
-        menu_text[0].setPosition(1280 / 2 - menu_text[0].getGlobalBounds().width / 2, 720 / 3);
+        menu_text[0].setPosition(1280 / 2 - menu_text[0].getGlobalBounds().width / 2, 720/ 4 );
 
         menu_text[1].setFont(font);
         menu_text[1].setCharacterSize(60);
         menu_text[1].setFillColor(sf::Color::White);
-        menu_text[1].setString("EXIT");
-        menu_text[1].setPosition(1280 / 2 - menu_text[0].getGlobalBounds().width / 2, 720 / 3 * 2);
+        menu_text[1].setString("VOCAB");
+        menu_text[1].setPosition(1280 / 2 - menu_text[1].getGlobalBounds().width / 2, 720 / 2);
+
+        menu_text[2].setFont(font);
+        menu_text[2].setCharacterSize(60);
+        menu_text[2].setFillColor(sf::Color::White);
+        menu_text[2].setString("EXIT");
+        menu_text[2].setPosition(1280 / 2 - menu_text[2].getGlobalBounds().width / 2, 720 / 4 * 3);
 
         score_.setFont(font);
         score_.setCharacterSize(60);
@@ -49,8 +55,16 @@ void graphics::init_text()
         definition_.setPosition(1280 / 2 - definition_.getGlobalBounds().width / 2, 120);
 
         definitionText.setFont(font);
-        definitionText.setCharacterSize(120);
+        definitionText.setCharacterSize(60);
         definitionText.setFillColor(sf::Color::White);
+
+        definitiontext_vocab.setFont(font);
+        definitiontext_vocab.setCharacterSize(40);
+        definitiontext_vocab.setFillColor(sf::Color::White);
+
+        definition_vocab.setFont(font);
+        definition_vocab.setCharacterSize(40);
+        definition_vocab.setFillColor(sf::Color::White);
 
         hpText.setFont(font);
         hpText.setCharacterSize(60);
@@ -99,6 +113,7 @@ void graphics::render_menu(sf::RenderTarget& target)
 {
     target.draw(menu_text[0]);
     target.draw(menu_text[1]);
+    target.draw(menu_text[2]);
 }
 
 void graphics::render_end(sf::RenderTarget& target)
@@ -107,6 +122,18 @@ void graphics::render_end(sf::RenderTarget& target)
     end_text[1].setPosition(1280 / 2 - end_text[1].getGlobalBounds().width / 2, 720 / 3 * 2);
     target.draw(end_text[0]);
     target.draw(end_text[1]);
+}
+
+void graphics::render_vocab(sf::RenderTarget& target, std::string definition_text, std::string definition)
+{
+    definitiontext_vocab.setString(definition_text);
+    definition_vocab.setString(definition);
+
+    definitiontext_vocab.setPosition(1280 / 2 - definitiontext_vocab.getGlobalBounds().width / 2, 400);
+    definition_vocab.setPosition(1280 / 2 - definition_vocab.getGlobalBounds().width/2, 200);
+
+    target.draw(definitiontext_vocab);
+    target.draw(definition_vocab);
 }
 
 void graphics::text_fit(int width)
@@ -123,4 +150,20 @@ void graphics::text_fit(int width)
         definitionText.setCharacterSize(60);
     }
     
+}
+
+void graphics::text_fit_vocab(int width)
+{
+    if (definitiontext_vocab.getGlobalBounds().width > width)
+    {
+        while (this->definitiontext_vocab.getGlobalBounds().width > width)
+        {
+            definitiontext_vocab.setCharacterSize(definitiontext_vocab.getCharacterSize() - 1);
+        }
+
+    }
+    else if (definitiontext_vocab.getGlobalBounds().width < width - 200)
+    {
+        definitiontext_vocab.setCharacterSize(40);
+    }
 }
